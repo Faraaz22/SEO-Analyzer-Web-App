@@ -1,42 +1,65 @@
-/* App.css */
-/* Add this at the top of App.css */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.App {
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+  background: linear-gradient(#7adceb, #c7d3e6);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar {
+  background-color: #005f73;
+  padding: 15px 30px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.navbar h1 {
+  margin: 0;
+}
+
+.page {
   display: flex;
   flex-direction: row;
-  height: 100vh;
-  font-family: sans-serif;
+  flex-wrap: wrap;
   padding: 20px;
-  box-sizing: border-box;
-  background: linear-gradient(0deg, #7adceb, #c7d3e6);
-}
-body{
-  border: none;
+  gap: 20px;
 }
 
 .left, .right {
   flex: 1;
+  min-width: 300px;
   padding: 20px;
-  box-sizing: border-box;
 }
-
 
 textarea {
   width: 100%;
   height: 150px;
-  padding: 8px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 14px;
   resize: vertical;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffffc9;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+textarea:focus {
+  border-color: #0a9396;
+  outline: none;
 }
 
 button {
   margin-top: 10px;
-  margin-left: 10px;
   padding: 8px 16px;
   font-size: 14px;
   cursor: pointer;
@@ -51,7 +74,11 @@ button:hover {
   background-color: #0a9396;
 }
 
-/* button in li */
+.results ul {
+  list-style: none;
+  padding: 0;
+}
+
 .results li {
   background-color: #57d5ec;
   display: flex;
@@ -62,30 +89,58 @@ button:hover {
   margin-bottom: 10px;
 }
 
-.results ul {
-  list-style: none;
-  padding: 0;
-}
-
-
 .results li button {
   flex-shrink: 0;
+}
+
+.right {
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
 }
 
 .text-preview {
   background-color: #f5f5f5;
   padding: 10px;
+  font-size: 14px;
   border-radius: 5px;
   white-space: pre-wrap;
   word-break: break-word;
+  max-height: 60vh;
+  overflow-y: auto;
+  line-height: 1.6;
 }
 
-.navbar {
-  background-color: var(--header-bg);
-  padding: 15px 30px;
-  color: var(--text);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+h3{
+  margin-bottom: 10px;
 }
-.navbar h1 {
-  margin: 0;
+
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .left, .right {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navbar h1 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .results li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .results li button {
+    margin-top: 8px;
+  }
 }
