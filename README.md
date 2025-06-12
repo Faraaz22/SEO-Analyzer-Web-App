@@ -28,7 +28,7 @@ npm run dev
 >
 > ```json
 > "scripts": {
->   "dev": "nodemon analyze.js"
+>   "dev": "nodemon server.js"
 > }
 > ```
 
