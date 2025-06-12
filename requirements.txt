@@ -1,3 +1,5 @@
 axios
 cors
 express
+dotenv
+nodemon
